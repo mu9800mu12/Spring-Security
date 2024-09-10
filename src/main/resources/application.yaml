@@ -1,0 +1,36 @@
+spring:
+  jpa:
+    generate-ddl: false
+    properties:
+      hibernate:
+        use_sql_comments: true
+        format_sql: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    open-in-view: false
+  application:
+    name: SpringSecurity
+  profiles:
+    active: prod
+  datasource:
+    password: 1234
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: poly
+    url: jdbc:mariadb://192.168.205.143:3306/myDB
+  data:
+    redis:
+      host: 192.168.205.143
+      port: 6379
+      username: poly
+      password: 1234
+  session:
+    redis:
+      flush-mode: on_save
+server:
+  port: 11000
+  servlet:
+    session:
+      timeout: 10m
