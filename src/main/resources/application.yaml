@@ -34,3 +34,27 @@ server:
   servlet:
     session:
       timeout: 10m
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    beans:
+      enabled: true
+    info:
+      enabled: true
+  server:
+    address: localhost
+    port: 11001
